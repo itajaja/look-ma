@@ -31,6 +31,18 @@ You can also add extra fields (like `dependencies`) which will be merged in the 
 look-ma
 ```
 
+## Updating your project
+
+you can simply modify the `src` field in the look-ma.json (if necessary), and simply rerun
+
+```
+look-ma
+```
+
+## Eject
+
+Simply replace the .gitignore file with a regular gitignore ((like this)[https://www.toptal.com/developers/gitignore/api/node])
+
 ## Develop a scaffold
 
 Nothing special is required in the scaffold, beside the following:
