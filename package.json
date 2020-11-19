@@ -1,6 +1,6 @@
 {
   "name": "look-ma",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
@@ -14,7 +14,6 @@
     "lint": "4c lint src './*'",
     "prepublishOnly": "yarn run build",
     "release": "4c release",
-    "start": "ts-node index.ts",
     "tdd": "jest --watch",
     "test": "yarn lint && yarn typecheck && jest",
     "testonly": "jest",
@@ -68,7 +67,6 @@
     "jest": "^26.0.0",
     "lint-staged": "^10.5.1",
     "prettier": "^2.0.1",
-    "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
   },
   "dependencies": {
