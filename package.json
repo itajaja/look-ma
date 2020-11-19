@@ -15,7 +15,7 @@
     "prepublishOnly": "yarn run build",
     "release": "4c release",
     "tdd": "jest --watch",
-    "test": "yarn lint && yarn typecheck && jest",
+    "test": "yarn lint && yarn typecheck",
     "testonly": "jest",
     "typecheck": "tsc --noEmit"
   },
