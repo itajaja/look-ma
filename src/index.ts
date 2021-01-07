@@ -21,7 +21,7 @@ async function run() {
 
   console.log(`cloning ${src}...`);
   const emitter = degit(src, {
-    cache: true,
+    cache: false,
     force: true,
     verbose: true,
   });
