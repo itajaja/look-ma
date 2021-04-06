@@ -13,11 +13,11 @@ yarn global add look-ma
 
 ## Usage
 
-create a look-ma.json:
+create a simple package.json, with only one entry, like this:
 
 ```
 {
-  "src": "https://github.com/itajaja/boilerplate-script-ts.git"
+  "lookma": "https://github.com/itajaja/boilerplate-script-ts.git"
 }
 ```
 
@@ -33,11 +33,14 @@ look-ma
 
 ## Updating your project
 
-you can simply modify the `src` field in the look-ma.json (if necessary), and simply rerun
+you can simply modify the `lookma` field in the package.json (if necessary), and simply rerun
 
 ```
 look-ma
 ```
+
+you can add additional fields to the package.json. your changes will be merged and override the fields
+in the boilerplate package.json
 
 ## Eject
 
@@ -48,4 +51,4 @@ Simply replace the .gitignore file with a regular gitignore ((like this)[https:/
 Nothing special is required in the scaffold, beside the following:
 
 - a valid package.json file
-- a .lookmaignore file that will replace the .gitignore file when downloaded through look-ma
+- a .lookmaignore file that will replace the .gitignore file when downloaded through look-ma. You want to ignore basically all the files, except package.json and (optionally) yarn.lock

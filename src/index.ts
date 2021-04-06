@@ -11,12 +11,12 @@ import merge from 'lodash/merge';
 const spawn = promisify(child_process.spawn);
 
 async function run() {
-  const manifest = JSON.parse(
-    await fs.readFile('look-ma.json', { encoding: 'utf-8' }),
+  const packageManifest = JSON.parse(
+    await fs.readFile('package.json', { encoding: 'utf-8' }),
   );
-  const { src, ...rest } = manifest;
+  const { lookma: src } = packageManifest;
   if (!src) {
-    throw new Error('you must specify a src field in your look-ma.json!');
+    throw new Error('you must specify a lookma field in your package.json!');
   }
 
   console.log(`cloning ${src}...`);
@@ -32,7 +32,7 @@ async function run() {
   const packageJson = JSON.parse(
     await fs.readFile('package.json', { encoding: 'utf-8' }),
   );
-  const mergedPackageJson = merge(packageJson, rest);
+  const mergedPackageJson = merge(packageJson, packageManifest);
   await fs.writeFile(
     'package.json',
     JSON.stringify(mergedPackageJson, undefined, 2),
@@ -42,4 +42,7 @@ async function run() {
   await spawn('yarn', [], { stdio: 'inherit' });
 }
 
-run();
+run().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});
